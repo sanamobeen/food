@@ -7,13 +7,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('menu', '0001_initial'),
+        ("menu", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='fooditem',
-            name='expiration_date',
+            model_name="fooditem",
+            name="expiration_date",
             field=models.DateField(default=datetime.date(2025, 5, 4)),
             preserve_default=False,
         ),
