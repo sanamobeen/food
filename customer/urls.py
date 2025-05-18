@@ -1,10 +1,15 @@
 from django.shortcuts import render
 from django.urls import path
 from customer import views
-from .views import registration
-from .views import login
-
+from .views import RegistrationView
+from .views import LoginView
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)  
 urlpatterns = [
-    path("customer/registration/", registration.as_view(), name="registration"),
-    path("customer/login/", login.as_view(), name="login"),
+    path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("customer/RegistrationView/", RegistrationView.as_view(), name="registration"),
+    path("customer/LoginView/", LoginView.as_view(), name="login"),
 ]

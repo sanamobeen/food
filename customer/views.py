@@ -10,7 +10,7 @@ from rest_framework.views import APIView
 from django.contrib.auth import authenticate
 
 
-class registration(APIView):
+class RegistrationView(APIView):
     permission_classes = [permissions.AllowAny]
 
     def post(self, request):
@@ -30,7 +30,7 @@ class registration(APIView):
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class login(APIView):
+class LoginView(APIView):
     permission_classes = [permissions.AllowAny]
 
     def post(self, request):
